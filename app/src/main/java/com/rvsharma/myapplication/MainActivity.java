@@ -85,12 +85,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         v1 = v;
         c.cancel();
 
-        v.setBackground(getDrawable(R.drawable.btn_option_select_background));
-
-        checkAnswer();
-
         switch (v1.getId()) {
             case R.id.btn_one:
+                btn_one.setBackground(getDrawable(R.drawable.btn_option_select_background));
                 if (btn_one.getText() == answer) {
                     Toast.makeText(MainActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
                     score += 10;
@@ -98,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_two:
+                btn_two.setBackground(getDrawable(R.drawable.btn_option_select_background));
                 if (btn_two.getText() == answer) {
                     Toast.makeText(MainActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
                     score += 10;
@@ -105,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_three:
+                btn_three.setBackground(getDrawable(R.drawable.btn_option_select_background));
                 if (btn_three.getText() == answer) {
                     Toast.makeText(MainActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
                     score += 10;
@@ -112,12 +111,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_four:
+                btn_four.setBackground(getDrawable(R.drawable.btn_option_select_background));
                 if (btn_four.getText() == answer) {
                     Toast.makeText(MainActivity.this, "You Are Correct", Toast.LENGTH_SHORT).show();
                     score += 10;
                 }
                 break;
         }
+
+        checkAnswer();
 
         btn_one.setEnabled(false);
         btn_two.setEnabled(false);
