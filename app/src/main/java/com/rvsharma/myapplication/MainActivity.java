@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Collections.shuffle(intList);
 
-        intList.toArray(numbers);
+        numbers = intList.toArray(numbers);
 
         tv_question = (TextView) findViewById(R.id.tv_question);
         tv_timer = (TextView) findViewById(R.id.tv_timer);
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_three = (Button) findViewById(R.id.btn_three);
 
         btn_four = (Button) findViewById(R.id.btn_four);
-        NextQuestion(p);
+        NextQuestion(numbers[p]);
 
         c = new CountDownTimer(15000, 1000) {
 
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void run() {
                 c.start();
-                NextQuestion(p);
+                NextQuestion(numbers[p]);
             }
         }, 3000);
     }
